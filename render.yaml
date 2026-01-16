@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: my-media-bridge-app  # Use a generic name here
+    env: docker
+    plan: free
+    region: singapore          # Or your preferred region
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_TYPE
+        value: postgres
+      - key: DATABASE_URI
+        sync: false            # You will enter this manually in the dashboard
+      - key: REDIS_URL
+        sync: false
+      - key: REDIS_TOKEN
+        sync: false
+      - key: SECRET_KEY
+        value: 8a4f2b9c3d1e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a
+      - key: ADDON_PASSWORD
+        value: Ezzah2016
+      - key: AIOSTREAMS_AUTH
+        value: chuunin:Ezzah2016
+      - key: PORT
+        value: 10000
